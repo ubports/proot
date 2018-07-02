@@ -1,4 +1,4 @@
-proot (5.1.0-3ubports1) xenial; urgency=medium
+proot (5.1.1+3ubports1) xenial; urgency=medium
 
   * Use Termux version of proot
 
