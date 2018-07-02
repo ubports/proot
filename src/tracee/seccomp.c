@@ -33,12 +33,7 @@ static void restart_syscall_after_seccomp(Tracee* tracee) {
 
 	/* Move the instruction pointer back to the original trap */
 	instr_pointer = peek_reg(tracee, CURRENT, INSTR_POINTER);
-#if defined(ARCH_ARM_EABI)
-	/* On ARM thumb mode systrap size is 2 */
-	if (tracee->_regs[CURRENT].ARM_cpsr & PSR_T_BIT) {
-		systrap_size = 2;
-	}
-#endif
+
 	poke_reg(tracee, INSTR_POINTER, instr_pointer - systrap_size);
 
 	/* Write registers. (Omiting special sysnum logic as we're not during syscall
