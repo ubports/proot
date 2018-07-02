@@ -213,7 +213,7 @@ clean distclean:
 	-$(RM) -f $(CHECK_OBJECTS) $(CHECK_PROGRAMS) $(CHECK_RESULTS) $(OBJECTS) $(LOADER_OBJECTS) $(LOADER-m32_OBJECTS) proot loader/loader loader/loader-m32 $(DEPS) build.h licenses
 
 install: proot
-	$($(quiet)INSTALL) -D $< $(DESTDIR)/$<
+	$($(quiet)INSTALL) -D $< $(DESTDIR)/usr/bin/$<
 
 uninstall:
-	-$(RM) -f $(DESTDIR)/proot
+	-$(RM) -f $(DESTDIR)/usr/bin/proot
